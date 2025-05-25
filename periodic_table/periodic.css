@@ -1,0 +1,64 @@
+body{
+    scale: 0.55;
+}
+body{
+    background-color: white;
+}
+td{
+    width: 80px;
+    height: 80px;                                                                                                                                                                                                                                                                                                   
+    text-align: center;
+    line-height: 4px;
+
+}
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+}
+.color_green {
+    background-color: green;
+    color: white; 
+}
+.color_red {
+    background-color: red;
+    color: white; /* Optional: makes text readable */
+}
+.color_blue {
+    background-color: blue;
+    color: white; /* Optional: makes text readable */
+}
+.color_yellow {
+    background-color: yellow;
+    color: black; 
+}
+.color_pink {
+    background-color: pink;
+    color: black; 
+}
+.color_skyblue {
+    background-color: skyblue;
+    color: black; 
+}
+.color_gray{
+    background-color: gray;
+    color: black; 
+}
+.color_purple{
+    background-color: purple;
+    color: black;
+}
+.color_brown{
+    background-color: brown;
+    color: black;
+}
+
+h1{
+    text-align: center;
+    color: crimson;
+}
+.color_indigo{
+    background-color: indigo;
+    color: white;
+}
