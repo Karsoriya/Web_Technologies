@@ -1,0 +1,100 @@
+<!--tables-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    
+    <style>
+        ul{
+            display:flex;
+            list-style-type: none;
+            align-items: center;
+        }
+        li{
+            padding:20px;
+            background-color: black;
+            width: 33%;
+            display: flex;
+            justify-content: center;
+        }
+        li:hover{
+            background-color: red;
+        }
+        a{color:white
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+            text-align: center;
+        }
+        main{
+            display:flex ;
+            justify-content: space-evenly;
+            width: 800px;
+            height: 500px;
+            gap:50px;
+                
+        }
+        
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="https://chrome/Home">Home</a></li>
+        <li><a href="www.chrome.com/AboutUs">About Us</a></li>
+        <li><a href="www.microsoft.com/blog">Blog</a></li>
+    </ul>
+    <main>
+        
+    <table>
+        <th colspan="2" style="width: 400px;" >Name</th>
+        <th>Roll No.</th>
+        <tr>
+            <td>Asim</td>
+            <td>Shabir</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Shahir</td>
+            <td>Gulzar</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Adil</td>
+            <td>Mehraj</td>
+            <td>20</td>
+            <br><br>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>Asim</td>
+            <td>Shahir</td>
+            <td>Adil</td>
+            
+        </tr>
+        <tr>
+            <th rowspan="2" style="width: 400px;">Ph No.</th>
+            <td>6784687</td>
+            <td>988776</td>
+            <td>09090</td>
+        </tr>
+            <tr>
+            <td>8977</td>
+            <td>9898233</td>
+            <td>1232</td>
+            </tr>
+            
+        </tr>
+    </table>
+    </main>
+</body>
+</html>
