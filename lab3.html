@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISBN Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ISBN Validator</h2>
+        <input type="text" id="isbn" placeholder="Enter ISBN-10 or ISBN-13">
+        <br>
+        <button onclick="checkISBN()">Check ISBN</button>
+        <p id="result"></p>
+    </div>
+
+<script>
+    function isValidISBN(isbn) {
+        isbn = isbn.replace(/[-\s]/g, '');
+
+        if (isbn.length === 10) {
+            return isValidISBN10(isbn);
+        } 
+        else if (isbn.length === 13) {
+            return isValidISBN13(isbn);
+        }
+        return false;
+    }
+
+    function isValidISBN10(isbn) {
+        if (!/^\d{9}[\dX]$/.test(isbn)) return false;
+        let sum = 0;
+        for (let i = 0; i < 9; i++) {
+            sum += (i+1) * parseInt(isbn[i]);
+        }
+        let check = isbn[9] === 'X' ? 10 :  isbn[9];
+        sum += 10 * check;
+        return sum % 11 === 0;
+    }
+
+    function isValidISBN13(isbn) {
+        if (!/^\d{13}$/.test(isbn)) 
+        return false;
+        let sum=0;
+        for (let i = 0; i < 13; i++) {
+            let digit = int(isbn[i]);
+            sum += (i % 2 === 0) ? digit : digit * 3;
+        }
+        return sum % 10 === 0;
+    }
+    function checkISBN() {
+        const input = document.getElementById("isbn").value.trim();
+        const result = document.getElementById("result");
+        if (!input) {
+            result.textContent = "Please enter an ISBN number.";
+            result.style.color = "orange";
+        }
+        else if (isValidISBN(input)) {
+            result.textContent = " Valid ISBN!";
+            result.style.color = "green";
+        }
+        else {
+            result.textContent = " Invalid ISBN!";
+            result.style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>
